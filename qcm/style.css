@@ -1,0 +1,33 @@
+form{
+     
+    border :5px solid black;
+    padding :5px;
+    margin-left:30%;
+    margin-right:auto;
+    width:40%;
+    background-color:white;
+
+}
+
+body{
+
+background-image: url("imagi.jpg");
+background-repeat:no-repeat;
+background-size:150%;
+
+}
+
+h1{
+color:white;
+
+}
+
+#q6{
+    
+    border :5px solid black;
+    padding :5px;
+    margin-left:30%;
+    margin-right:auto;
+    width:40%;
+    background-color:white;
+}
