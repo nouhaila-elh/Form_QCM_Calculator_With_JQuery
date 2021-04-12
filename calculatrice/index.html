@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Calculator</title>
+	<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+	<script
+  	src="https://code.jquery.com/jquery-3.3.1.min.js"
+  	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  	crossorigin="anonymous"></script>
+  	<link rel="stylesheet" type="text/css" href="stye.css">
+</head>
+<body>
+</br>
+	<div class="calc">
+	</br>
+		<center><p>Ma calculatrice</p></center>
+		<!-- <br> -->
+		<form name="form">
+			<input class="calc-display">
+		</form>
+		<table>
+			<!-- <tr>
+				<td><input type="button" value="C" onclick="c()"></td>
+				<td><input type="button" value="/" onclick="insrt('/')"></td>
+				<td><input type="button" value="<" onclick="del()"></td>
+				<td><input type="button" value="X" onclick="insrt('*')"></td>
+			</tr>  -->
+			<tr>
+				<td><input type="button" value="7" onclick="insrt(7)"></td>
+				<td><input type="button" value="8" onclick="insrt(8)"></td>
+				<td><input type="button" value="9" onclick="insrt(9)"></td>
+				<td><input type="button" value="CE" onclick="c('CE')"></td>
+                <td><input type="button" value="C" onclick="c()"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="4" onclick="insrt(4)"></td>
+				<td><input type="button" value="5" onclick="insrt(5)"></td>
+				<td><input type="button" value="6" onclick="insrt(6)"></td>
+				<td><input type="button" value="/" onclick="insrt('/')"></td>
+                <td><input type="button" value="*" onclick="insrt('*')"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="1" onclick="insrt(1)"></td>
+				<td><input type="button" value="2" onclick="insrt(2)"></td>
+				<td><input type="button" value="3" onclick="insrt(3)"></td>
+                <td><input type="button" value="-" onclick="insrt('-')"></td>
+				<td rowspan=2><input type="button" value="+" onclick="insrt('+')"  style="height: 158px; background-color: rgb(164, 229, 238)"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="button" value="0" onclick="insrt(0)" style="width: 158px; ;"></td>
+				<td><input type="button" value="." onclick="insrt('.')"></td>
+                <td><input type="button" value="=" onclick="eql()"></td>
+            
+			</tr>
+		</table>
+	</div>
+	<script type="text/javascript" src="js.js"></script>
+</body>
+</html>
+
+<!-- <html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="stye.css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:600,700" rel="stylesheet">
+		<title>A simple calculator</title>
+	</head>
+	<body>
+		<div id="container">
+			<div id="calculator">
+				<div id="result">
+					<div id="history">
+						<p id="history-value"></p>
+					</div>
+					<div id="output">
+						<p id="output-value"></p>
+					</div>
+				</div>
+				<div id="keyboard">
+					<button class="operator" id="clear">C</button>
+					<button class="operator" id="backspace">CE</button>
+					<button class="operator" id="%">%</button>
+					<button class="operator" id="/">&#247;</button>
+					<button class="number" id="7">7</button>
+					<button class="number" id="8">8</button>
+					<button class="number" id="9">9</button>
+					<button class="operator" id="*">&times;</button>
+					<button class="number" id="4">4</button>
+					<button class="number" id="5">5</button>
+					<button class="number" id="6">6</button>
+					<button class="operator" id="-">-</button>
+					<button class="number" id="1">1</button>
+					<button class="number" id="2">2</button>
+					<button class="number" id="3">3</button>
+					<button class="operator" id="+">+</button>
+					<button class="empty" id="empty"></button>
+					<button class="number" id="0">0</button>
+					<button class="empty" id="empty"></button>
+					<button class="operator" id="=">=</button>
+				</div>
+			</div>
+		</div>
+		<script src="js.js"></script>
+	</body>
+</html> -->
