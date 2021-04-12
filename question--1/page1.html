@@ -1,0 +1,397 @@
+<!doctype html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    
+
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+ 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" ></script>
+  
+   <title>nahiran.ma</title>
+  </head>
+
+  
+  <body   class="bg text-dark " >
+
+  <section class="bg h6 ">
+  	<div class="container">
+  		<div class="row ">
+  			<div class="col-md-6">
+  				<div class="form-wrap">
+  					<div class="form-heading">
+  						<h1 align="center"> Inscription</E-Commerce></h1>
+  					</div>
+  					<form >
+  						<div class="row">
+                            <div class="col-lg-6">
+  							    <label class="h5">Nom: </label>
+  							    <input type="text" class="form-control required" id="fname"fname="" placeholder="Votre nom">
+                                <span class="error_form" id="fname_error_message"></span>
+  							    <p id="p1"></p>
+  						    </div>
+                             <div class="col-lg-6">
+                                <label class="h5">Prenom: </label>
+                                <input type="text" class="form-control required" id="lname"lname="" placeholder="Votre prenom">
+                                <span class="error_form" id="lname_error_message"></span>
+                                <p id="p2"></p>
+                            </div>
+                        </div>
+                        <div>
+                             <label class="h5" >Adresse</label>
+                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+  							<label class="h5">Email: </label>
+  							<input type="email" class="form-control required" id="email"email=""  placeholder="Votre email">
+                            <span class="error_form" id="email_error_message"></span>
+  							<p id="p3"></p>
+                            
+                            <label class="h5">Login: </label>
+  							    <input type="text" class="form-control required" id="login"login="" placeholder="votre login">
+                                <span class="error_form" id="login_error_message"></span>
+  							    <p id="p4"></p>
+  						</div>
+  						
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label class="h5">Password: </label>
+                                <input type="password" class="form-control required" id="Password"Password="" placeholder="Entrer votre password">
+                                <span class="error_form" id="Password_error_message"></span>
+                                <p id="p5"></p>
+                            </div>
+                            <div class="col-lg-6">
+                                <label class="h5">Confirmer: </label>
+                                <input type="password" class="form-control required" id="Re_Password"Re_Password="" placeholder="re-entrer votre password">
+                                <span class="error_form" id="Re_Password_error_message"></span>
+                                <p id="p6"></p>
+                            </div>                                                                                                                      
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+  							    <label class="h5">Téléphone: </label>
+  							    <input type="tel" class="form-control required" id="téléphone"téléphone="" placeholder="Numéro de téléphone ">
+                                  <span class="error_form" id="téléphone_error_message"></span>
+  							    <p id="p7"></p>
+  						    </div>
+                            <div class="col-lg-6">
+                                <label class="h5">Pays: </label>
+                                <input type="civility" class="form-control required" id="pays"pays="" placeholder="Votre pays">
+                                <span class="error_form" id="pays_error_message"></span>
+                                <p id="p8"></p>
+                            </div>
+                        </div>
+                        
+                        <label class="h5">Civilité: </label>
+                        <select class="form-control required" id="civility"civility="" >
+                            <span class="error_form" id="civility_error_message"></span>
+                            <option >Mlle<option>
+                            <option>Mme</option>
+                            <option>M</option>
+                        </select>
+                         
+                        
+                        <br>
+                        <div class="text-center">
+                        <input  type="submit" class="btn btn-primary btn-block " id="submit">
+  						</div>
+  						
+  					</form>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+      <script type="text/javascript">
+        $(function(){
+            $("#fname_error_messeage").hide();
+            $("#lname_error_message").hide();
+            $("#email_error_message").hide();
+            $("#login_error_message").hide();
+            $("#Password_error_message").hide();
+            $("#Re_Password_error_message").hide();
+            $("#téléphone_error_message").hide();
+            $("#pays_error_message").hide();
+            $("#civility_error_message").hide();
+            var error_fname=false;
+            var error_lname=false;
+            var error_email=false;
+            var error_login=false;
+            var error_Password=false;
+            var error_Re_Password=false;
+            var error_téléphone=false;
+            var error_pays=false;
+           
+            $("#fname").focusout(function(){
+                check_fname();
+            });
+            $("#lname").focusout(function(){
+                check_lname();
+            });
+            $("#email").focusout(function(){
+                check_email();
+            });
+            $("#login").focusout(function(){
+                check_login();
+            });
+            $("#Password").focusout(function(){
+                check_Password();
+            });
+            $("#Re_Password").focusout(function(){
+                check_Re_Password();
+            });
+            $("#téléphone").focusout(function(){
+                check_téléphone();
+            });
+        
+            $("#pays").focusout(function(){
+                check_pays();
+            });
+            
+            function check_fname(){
+                var pattern=/^[a-zA-Z]*$/;
+                var fname=$("#fname").val()
+                if(pattern.test(fname) && fname !=='') {
+                    $("#fname_error_message").hide();
+                    $("#fname").css("border-bottom","2px solid #34F458");
+                } else{
+                    $("#fname_error_message").html("taper un nom ");
+                    $("#fname_error_message").show();
+                    $("#fname_error_message").css("border-bottom");
+                    error_fname = true;
+                }
+            }
+            function check_lname() {
+                var pattern=/^[a-zA-Z]*$/;
+                var lname=$("#lname").val()
+                if(pattern.test(lname) && lname !=='') {
+                    $("#lname_error_message").hide();
+                    $("#lname").css("border-bottom","2px solid #34F458");
+                } else{
+                    $("#lname_error_message").html("taper un prenom");
+                    $("#lname_error_message").show();
+                    $("#lname_error_message").css("border-bottom");
+                    error_lname = true;
+                }
+            }
+        function check_email(){
+         var pattern=/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}?$/;
+         var email=$("#email").val();
+         if(pattern.test(email) && email !== ''){
+             $("email_error_message").hide();
+             $("#email").css("border-bottom","2px solid #34F458");
+         }else{
+             $("#email_error_message").html("l'email est incorrecte");
+             $("#email_error_message").show();
+             $("email").css("border-bottom","2px solid #F90A0A");
+             error_email=true;
+         }
+         }
+         function check_login(){
+         var pattern=/^[a-zA-Z]*$/;
+         var login=$("#login").val();
+         if(pattern.test(login) && login !==''){
+             $("login_error_message").hide();
+             $("#login").css("border-bottom","2px solid #34F458");
+         }else{
+             $("#login_error_message").html("login incorrect");
+             $("#login_error_message").show();
+             $("login").css("border-bottom","2px solid #F90A0A");
+             error_login=true;
+         }
+         }
+         function Password(){
+         var Password_length=$("#Password").val().length;
+         if(Password_length<8){
+             $("Password_error_message").html("Atleast 8 characters");
+             $("#Passworde_error_message").show();
+             $("#Password").css("border-bottom","2px solid #34F458");
+         }else{
+             $("#Password_error_message").hide();
+             $("Password").css("border-bottom","2px solid #F90A0A");
+             
+         }
+         }
+         function check_Re_Password(){
+            var Password=$("#Password").val();
+            var Re_Password=$("#Re_Password").val();
+
+         if(Password !== Re_Password){
+             $("Re_Password_error_message").html("RePassword incorrect");
+             $("#Re_Password_error_message").show();
+             $("#Re_Password").css("border-bottom","2px solid #F90A0A");
+             error_Re_Password=true;
+            }else{
+             $("#Re_Password_error_message").hide();
+             $("#Re_Password").css("border-bottom","2px solid #34F458");
+             
+         }
+         }
+         function check_téléphone(){
+         var pattern=/^[0-9]*$/;
+         var téléphone=$("#téléphone").val();
+
+        if(pattern.test(téléphone) && téléphone !== ''){
+             $("téléphone_error_message").hide();
+             $("#téléphone").css("border-bottom","2px solid #34F458");
+         }else{
+             $("#téléphone_error_message").html("Numero de téléphone incorrect");
+             $("#téléphone_error_message").show();
+             $("téléphone").css("border-bottom","2px solid #F90A0A");
+             error_téléphone=true;
+         }
+         }
+         function check_pays(){
+         var pattern=/^[a-zA-Z]*$/;
+         var pays=$("#pays").val();
+         if(pattern.test(pays) && pays !== ''){
+             $("pays_error_message").hide();
+             $("#pays").css("border-bottom","2px solid #34F458");
+         }else{
+             $("#pays_error_message").html("corriger votre nom de pays");
+             $("#pays_error_message").show();
+             $("pays").css("border-bottom","2px solid #F90A0A");
+             error_pays=true;
+         }
+         }
+        $("#regForm").submit(function(){
+            error_fname=false;
+            error_lname=false;
+            error_email=false;
+            error_Password=false;
+            error_Re_Password=false;
+            error_téléphone=false;
+            error_pays=false;
+            error_civility=false;
+            check_fname();
+            check_lmane();
+            check_login();
+            check_Password();
+            check_Re_Password();
+            check_téléphone();
+            check_pays();
+            check_civility();
+            
+            if(error_fname===false && error_lname===false && error_email===false && error_login===false && error_Password===false && error_Re_Password===false && error_téléphone===false && error_pays===false && error_civility===false){
+                 alert("Registration Successfull");
+                 return true;
+             }else{
+                 alert("please fill the form correctly");
+                 return false;
+             
+             }
+         });
+    }); 
+    </script>
+  </section>
+
+	
+	
+
+    
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script>
+    $(document).ready(function(){
+        $("#submit").click(function(){
+            var fname = $("#fname").val();
+            var lname = $("#lname").val();
+            var email = $("#email").val();
+            var login = $("#login").val();
+            var Password= $("#Password").val();
+            var Re_Password= $("#Re_Password").val();
+            var téléphone = $("#téléphone").val();
+            var pays = $("#pays").val();
+            var civility = $("#civility").val();
+          
+       
+          
+
+            if(fname.length == "")
+            {
+                $("#p1").text("Entrer votre prenom");
+                $("#fname").focus();
+                return false;
+            }
+          else if(lname.length == "")
+            {
+                $("#p2").text("Entrer votre nom");
+                $("#lname").focus();
+                return false;
+            }
+            else if(email.length == ""){
+                $("#p3").text("Entrer votre email");
+                $("#email").focus();
+                return false;
+            }
+
+          else if(login.length == ""){
+                $("#p4").text("Entrer votre login");
+                $("#login").focus();
+                return false;
+            }
+            if(Password.length == ""){
+                $("#p5").text("Entrer votre password");
+                $("#Password").focus();
+                return false;
+            }
+          
+          if(Re_Password.length == ""){
+                $("#p6").text("re-entrer votre password");
+                $("#Re_Password").focus();
+                return false;
+            }
+          
+
+          
+
+          if(téléphone.length == ""){
+                $("#p7").text("Entrer votre numéro de téléphone");
+                $("#téléphone").focus();
+                return false;
+            }
+          if(pays.length == ""){
+                $("#p8").text("Entrer votre Pays");
+                $("#pays").focus();
+                return false;
+            }
+          
+
+
+
+            else{
+                var con = confirm("confirmer l'envoie du formulaire");
+                if(con == true)
+                {
+                    return true;
+                }
+                else{
+                    return false;
+                }
+          }
+        var error_fname=false;
+        var error_lname=false;
+        var error_email=false;
+        var error_login=false;
+        var error_Password=false;
+        var error_Re_Password=false;
+        var error_téléphone=false;
+        var error_pays=false;
+
+
+         
+        
+          
+      });
+
+  });
+
+
+</script>
+  
+  
+  
+  
+  
+  </body>
+</html>
